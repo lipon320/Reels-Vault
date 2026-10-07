@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="bn" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReelsHub - Free Premium Reels & Shorts Vault</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                            neon: '#00f2fe',
+                            gold: '#fbbf24',
+                            accent: '#f43f5e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Hind Siliguri', 'sans-serif'],
+                        bn: ['Hind Siliguri', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-modal {
+            background: rgba(11, 17, 32, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .glow-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glow-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px -5px rgba(99, 102, 241, 0.35), 0 0 15px 0 rgba(0, 242, 254, 0.2);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #00f2fe 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #f43f5e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 70%
+            );
+            transform: rotate(30deg);
+            animation: shimmer 3.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+        .pulse-neon {
+            animation: pulseNeon 2s infinite;
+        }
+        @keyframes pulseNeon {
+            0%, 100% { box-shadow: 0 0 15px rgba(0, 242, 254, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(0, 242, 254, 0.8); }
+        }
+    </style>
+
+    <!-- Adsterra Social Bar Script -->
+    <script src="https://pl31534812.profitableratecpmnetwork.com/95/18/6c/95186cff315ddff9b3bd3e431d9ee60a.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+
+    <header class="sticky top-0 z-40 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-600 via-brand-neon to-brand-accent p-0.5 shadow-lg group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center">
+                        <i class="fa-solid fa-clapperboard text-2xl text-brand-neon group-hover:text-brand-gold transition-colors"></i>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-tight text-white block leading-none">REELS<span class="text-gradient-cyan">HUB</span></span>
+                    <span class="text-[10px] text-slate-400 font-semibold tracking-widest uppercase">Free Premium Shorts Vault</span>
+                </div>
+            </a>
+
+            <!-- Header Quick Actions -->
+            <div class="flex items-center gap-3">
+                <a href="https://t.me/digilab320" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sky-500/10 border border-sky-500/30 text-sky-400 font-semibold text-xs sm:text-sm hover:bg-sky-500 hover:text-white transition-all shadow-lg hover:shadow-sky-500/20">
+                    <i class="fa-brands fa-telegram text-lg"></i>
+                    <span class="font-bn">টেলিগ্রাম গ্রুপ</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="relative pt-10 pb-8 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+            <!-- Ambient Light Overlay -->
+            <div class="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+                <div class="w-[550px] h-[550px] bg-brand-600/20 rounded-full blur-[120px]"></div>
+                <div class="w-[350px] h-[350px] bg-brand-neon/15 rounded-full blur-[100px] -ml-40"></div>
+            </div>
+
+            <!-- Limited Time Offer Badge -->
+            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-amber-500/20 via-rose-500/20 to-brand-500/20 border border-amber-500/40 text-amber-300 text-xs sm:text-sm font-bold mb-6 animate-pulse shadow-md">
+                <i class="fa-solid fa-fire text-amber-400 text-sm"></i>
+                <span class="font-bn">🔥 সীমিত সময়ের অফার: আজকের জন্য সব বান্ডেল ১০০% ফ্রি! (Free For Today)</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white max-w-4xl mx-auto leading-tight">
+                ডাউনলোড করুন সেরা <span class="text-gradient-cyan">Viral Reels & Shorts</span> বান্ডেল
+            </h1>
+            <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-bn font-medium">
+                ফেসবুক, ইনস্টাগ্রাম এবং ইউটিউব শটসের জন্য ২৩টি ক্যাটাগরির এইচডি নো-কপিরাইট ভিডিও কালেকশন।
+            </p>
+
+            <!-- Telegram Notice Banner -->
+            <div class="max-w-2xl mx-auto mt-6 p-3.5 sm:p-4 rounded-2xl bg-sky-950/60 border border-sky-500/40 text-sky-200 text-xs sm:text-sm flex items-center justify-between gap-3 text-left shadow-xl backdrop-blur-sm">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-sky-500/20 flex items-center justify-center shrink-0">
+                        <i class="fa-brands fa-telegram text-2xl text-sky-400"></i>
+                    </div>
+                    <p class="font-bn leading-snug">
+                        <strong>নোট:</strong> ডাউনলোড করতে সমস্যা হলে আমাদের <strong>Telegram Group</strong>-এ জয়েন হয়ে Instruction ভিডিওটি দেখে সহজে ডাউনলোড করুন!
+                    </p>
+                </div>
+                <a href="https://t.me/digilab320" target="_blank" rel="noopener" class="shrink-0 px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs font-bn transition-colors shadow-md">
+                    জয়েন করুন
+                </a>
+            </div>
+
+            <!-- Instant Search Input -->
+            <div class="mt-8 max-w-xl mx-auto relative">
+                <div class="relative flex items-center">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400 text-lg"></i>
+                    <input type="text" id="searchInput" oninput="filterBundles()" placeholder="আপনার পছন্দের বান্ডেল খুঁজুন (যেমন: Islamic, Cricket, AI, Funny)..." 
+                        class="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-900/90 border border-slate-700/80 text-white placeholder-slate-400 focus:outline-none focus:border-brand-neon focus:ring-2 focus:ring-brand-neon/30 text-sm sm:text-base transition-all shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 my-6 flex justify-center">
+            <div class="w-full max-w-4xl p-2.5 rounded-2xl bg-slate-900/60 border border-slate-800 text-center overflow-hidden shadow-xl">
+                <div class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-1.5"><i class="fa-solid fa-rectangle-ad mr-1"></i> Sponsored Content</div>
+                <script async="async" data-cfasync="false" src="https://pl31534811.profitableratecpmnetwork.com/ee2cdecf3c964b907fd537f1f4bb4642/invoke.js"></script>
+                <div id="container-ee2cdecf3c964b907fd537f1f4bb4642"></div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+                <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2.5">
+                    <i class="fa-solid fa-layer-group text-brand-neon"></i>
+                    <span>সকল ট্রেন্ডিং বান্ডেল সমূহ</span>
+                    <span id="bundleCount" class="text-xs px-3 py-1 rounded-full bg-slate-800 text-brand-neon border border-slate-700 font-mono">23টি বান্ডেল</span>
+                </h2>
+            </div>
+
+            <!-- Dynamic Bundle Grid Container -->
+            <div id="cardsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Cards render here via JS -->
+            </div>
+
+            <!-- No Search Results -->
+            <div id="noResults" class="hidden py-16 text-center">
+                <i class="fa-solid fa-circle-exclamation text-5xl text-slate-600 mb-3"></i>
+                <p class="text-slate-400 font-bn text-lg">কোনো বান্ডেল পাওয়া যায়নি! অন্য নাম লিখে চেষ্টা করুন।</p>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 my-6 flex justify-center">
+            <div class="w-full max-w-4xl p-2.5 rounded-2xl bg-slate-900/60 border border-slate-800 text-center overflow-hidden shadow-xl">
+                <div class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-1.5"><i class="fa-solid fa-rectangle-ad mr-1"></i> Sponsored Content</div>
+                <script async="async" data-cfasync="false" src="https://pl31534811.profitableratecpmnetwork.com/ee2cdecf3c964b907fd537f1f4bb4642/invoke.js"></script>
+                <div id="container-ee2cdecf3c964b907fd537f1f4bb4642"></div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="rounded-3xl bg-gradient-to-r from-sky-950 via-slate-900 to-indigo-950 border border-sky-500/40 p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden shadow-2xl">
+                <div class="relative z-10 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-semibold mb-3">
+                        <i class="fa-brands fa-telegram"></i> Official Support Group
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white font-bn">ডাউনলোড করতে কোনো সমস্যা হচ্ছে?</h3>
+                    <p class="mt-2 text-slate-300 text-sm sm:text-base font-bn max-w-xl leading-relaxed">
+                        ডাউনলোড করতে সমস্যা হলে সরাসরি আমাদের টেলিগ্রাম গ্রুপে জয়েন হয়ে ইনস্ট্রাকশন ভিডিও দেখুন। সেখানে ২৪/৭ সাপোর্ট দেওয়া হয় এবং নিয়মিত নতুন নতুন বান্ডেল শেয়ার করা হয়!
+                    </p>
+                </div>
+                <div class="relative z-10 shrink-0">
+                    <a href="https://t.me/digilab320" target="_blank" rel="noopener" class="px-6 py-4 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-base flex items-center gap-3 shadow-xl shadow-sky-500/30 transition-all shimmer-btn font-bn">
+                        <i class="fa-brands fa-telegram text-2xl"></i>
+                        <span>টেলিগ্রাম গ্রুপে জয়েন করুন</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
+            <div class="my-2">
+                <!-- 320x50 Banner Code in Footer -->
+                <script>atOptions = {'key' : 'c15b716148d184fd66a15d94a502edc7','format' : 'iframe','height' : 50,'width' : 320,'params' : {}};</script>
+                <script src="https://www.highrevenueformat.com/c15b716148d184fd66a15d94a502edc7/invoke.js"></script>
+            </div>
+            <p>© 2026 ReelsHub Vault. All Rights Reserved. Free Media Distribution Platform.</p>
+        </div>
+    </footer>
+
+    <div id="downloadModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+        <div class="w-full max-w-lg glass-modal rounded-3xl p-5 sm:p-7 relative shadow-2xl border border-slate-700/80 max-h-[92vh] overflow-y-auto">
+            <!-- Close Modal Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Modal Title Header -->
+            <div class="flex items-center gap-4 mb-4">
+                <div id="modalThumbContainer" class="w-16 h-16 rounded-2xl overflow-hidden bg-slate-800 shrink-0 border border-slate-700">
+                    <img id="modalImage" src="" alt="Thumbnail" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="text-[11px] font-extrabold uppercase text-brand-neon tracking-wider">Bundle Unlocking</span>
+                    <h3 id="modalTitle" class="text-xl font-bold text-white leading-tight">Bundle Name</h3>
+                    <div id="modalPriceTag" class="mt-1 flex items-center gap-2 text-xs font-bn">
+                        <!-- JS sets prices -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Limited Offer Alert Banner -->
+            <div class="mb-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center gap-3">
+                <i class="fa-solid fa-gift text-amber-400 text-xl shrink-0"></i>
+                <div>
+                    <div class="text-xs text-amber-300 font-bold">LIMITED TIME OFFER - 100% FREE TODAY</div>
+                    <div class="text-[11px] text-slate-300 font-bn">কোনো টাকা ছাড়াই সম্পূর্ণ বিনামূল্যে সকল ফাইল ডাউনলোড করুন!</div>
+                </div>
+            </div>
+
+            <!-- Telegram Notice inside Download Popup -->
+            <div class="mb-4 p-3 rounded-xl bg-sky-950/70 border border-sky-500/40 text-xs text-sky-200 font-bn flex items-start gap-2.5">
+                <i class="fa-brands fa-telegram text-sky-400 text-lg shrink-0 mt-0.5"></i>
+                <div class="leading-relaxed">
+                    <strong>হেল্পলাইন:</strong> ডাউনলোড করতে কোনো সমস্যা হলে আমাদের <a href="https://t.me/digilab320" target="_blank" rel="noopener" class="underline text-sky-300 hover:text-white font-bold">Telegram Group</a>-এ জয়েন হয়ে Instruction ভিডিও দেখে ডাউনলোড করুন।
+                </div>
+            </div>
+
+            <!-- Native Banner Ad Placement INSIDE Modal -->
+            <div class="mb-5 p-2 rounded-xl bg-slate-900/90 border border-slate-800 text-center overflow-hidden">
+                <div class="text-[9px] text-slate-500 font-bold uppercase tracking-widest mb-1"><i class="fa-solid fa-rectangle-ad mr-1"></i> Sponsored Ad</div>
+                <script async="async" data-cfasync="false" src="https://pl31534811.profitableratecpmnetwork.com/ee2cdecf3c964b907fd537f1f4bb4642/invoke.js"></script>
+                <div id="container-ee2cdecf3c964b907fd537f1f4bb4642"></div>
+            </div>
+
+            <!-- Download Action Buttons Section -->
+            <div class="space-y-3">
+                <!-- File Locker Unlock Button (Unique URL per bundle) -->
+                <a id="fileLockerBtn" href="#" target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-purple-600 hover:from-brand-500 hover:to-purple-500 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-3 shadow-lg shadow-brand-500/25 transition-all shimmer-btn">
+                    <i class="fa-solid fa-lock-open text-amber-300"></i>
+                    <span>Download Bundle</span>
+                </a>
+
+                <!-- Adsterra Smartlink / Direct High-Speed Download Buttons -->
+                <a href="https://www.profitableratecpmnetwork.com/rmzd9ec7d?key=8fb231e25030a5ea7876242ecc7534fa" target="_blank" rel="noopener" class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2.5 shadow-md transition-all">
+                    <i class="fa-solid fa-bolt text-amber-300"></i>
+                    <span>⚡ High-Speed Direct Cloud Download [Server 1]</span>
+                </a>
+
+                <a href="https://www.profitableratecpmnetwork.com/rmzd9ec7d?key=8fb231e25030a5ea7876242ecc7534fa" target="_blank" rel="noopener" class="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-sm flex items-center justify-center gap-2.5 transition-all">
+                    <i class="fa-solid fa-cloud-arrow-down text-sky-400"></i>
+                    <span>🚀 Fast Mirror Download Link [Server 2]</span>
+                </a>
+            </div>
+
+            <!-- Footer Security Note -->
+            <div class="mt-4 text-center text-[11px] text-slate-500 flex items-center justify-center gap-1">
+                <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                <span>100% Safe & Clean Media File. No Malware.</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 23 Video Category Bundles with custom image thumbnails, prices, and individual empty file locker URL slots
+        const bundlesData = [
+            { 
+                id: 1, 
+                title: "2D Animation Video", 
+                originalPrice: "৳২৫০", 
+                fileLockerUrl: "", 
+                image: "img/Digital_card_graphic_for_2D_20261007002642.jpg" 
+            },
+            { 
+                id: 2, 
+                title: "Aesthetic Reels Bundle", 
+                originalPrice: "৳২০০", 
+                fileLockerUrl: "", 
+                image: "img/Card_cover_for_Aesthetic_Reels_20261007003108.jpg" 
+            },
+            { 
+                id: 3, 
+                title: "Art and Craft 1", 
+                originalPrice: "৳১৫০", 
+                fileLockerUrl: "", 
+                image: "img/Art_and_craft_card_cover_20261007002624.jpg" 
+            },
+            { 
+                id: 4, 
+                title: "Art and Craft 2", 
+                originalPrice: "৳১৫০", 
+                fileLockerUrl: "", 
+                image: "img/Craft_supplies_and_pottery_shaping_20261007002600.jpg" 
+            },
+            { 
+                id: 5, 
+                title: "Art and Craft", 
+                originalPrice: "৳২০০", 
+                fileLockerUrl: "", 
+                image: "img/Art_and_craft_desk_cover_20261007003033.jpg" 
+            },
+            { 
+                id: 6, 
+                title: "Bangla Funny Video", 
+                originalPrice: "৳৩০০", 
+                fileLockerUrl: "", 
+                image: "img/Bangla_funny_video_card_cover_20261007002652.jpg" 
+            },
+            { 
+                id: 7, 
+                title: "Bangla Natok Clip", 
+                originalPrice: "৳২৫০", 
+                fileLockerUrl: "", 
+                image: "img/Bangla_Natok_Clip_card_cover_20261007002749.jpg" 
+            },
+            { 
+                id: 8, 
+                title: "Cat Reels Bundle", 
+                originalPrice: "৳১৫০", 
+                fileLockerUrl: "", 
+                image: "img/Kittens_playing_with_yarn_20261007002427.jpg" 
+            },
+            { 
+                id: 9, 
+                title: "Cricket Reels Bundle", 
+                originalPrice: "৳৩০০", 
+                fileLockerUrl: "", 
+                image: "img/Cricket_ball_hitting_wickets_20261007002739.jpg" 
+            },
+            { 
+                id: 10, 
+                title: "Emotional Bangla", 
+                originalPrice: "৳২০০", 
+                fileLockerUrl: "", 
+                image: "img/Monsoon_rain_on_glass_window_20261007002618.jpg" 
+            },
+            { 
+                id: 11, 
+                title: "Emotional English", 
+                originalPrice: "৳২০০", 
+                fileLockerUrl: "", 
+                image: "img/Figure_walking_along_coastal_cliff_20261007002547.jpg" 
+            },
+            { 
+                id: 12, 
+                title: "English AI Reels", 
+                originalPrice: "৳৩০০", 
+                fileLockerUrl: "", 
+                image: "img/English_AI_Reels_card_cover_20261007002658.jpg" 
+            },
+            { 
+                id: 13, 
+                title: "English Movie Clip", 
+                originalPrice: "৳২৫০", 
+                fileLockerUrl: "", 
+                image: "img/Film_clapperboard_on_theater_stage_20261007002506.jpg" 
+            },
+            { 
+                id: 14, 
+                title: "Football Reels 2", 
+                originalPrice: "৳২৫০", 
+                fileLockerUrl: "", 
+                image: "img/Football_striker_kicking_ball_20261007002810.jpg" 
+            },
+            { 
+                id: 15, 
+                title: "Football Reels", 
+                originalPrice: "৳২৫০", 
+                fileLockerUrl: "", 
+                image: "img/Soccer_ball_hitting_stadium_net_20261007002820.jpg" 
+            },
+            { 
+                id: 16, 
+                title: "Funny Video", 
+                originalPrice: "৳২০০", 
+                fileLockerUrl: "", 
+                image: "img/Funny_video_card_cover_design_20261007002540.jpg" 
+            },
+            { 
+                id: 17, 
+                title: "Hashtags", 
+                originalPrice: "৳১৫০", 
+                fileLockerUrl: "", 
+                image: "img/Hashtags_branding_card_cover_20261007002442.jpg" 
+            },
+            { 
+                id: 18, 
+                title: "Islamic Bundle 2", 
+                originalPrice: "৳৩০০", 
+                fileLockerUrl: "", 
+                image: "img/Islamic_Bundle_card_cover_design_20261007002450.jpg" 
+            },
+            { 
+                id: 19, 
+                title: "Islamic Bundle", 
+                originalPrice: "৳৩০০", 
+                fileLockerUrl: "", 
+                image: "img/Mosque_minarets_at_sunset_20261007002800.jpg" 
+            },
+            { 
+                id: 20, 
+                title: "Islamic Reels Bundle", 
+                originalPrice: "৳৩০০", 
+                fileLockerUrl: "", 
+                image: "img/Quran_and_prayer_beads_on_20261007002608.jpg" 
+            },
+            { 
+                id: 21, 
+                title: "Motivational Reels (English)", 
+                originalPrice: "৳২৫০", 
+                fileLockerUrl: "", 
+                image: "img/Athlete_standing_on_mountain_summit_20261007002710.jpg" 
+            },
+            { 
+                id: 22, 
+                title: "Romantic", 
+                originalPrice: "৳২০০", 
+                fileLockerUrl: "", 
+                image: "img/Couple_holding_hands_under_lights_20261007002755.jpg" 
+            },
+            { 
+                id: 23, 
+                title: "Space Content", 
+                originalPrice: "৳২৫০", 
+                fileLockerUrl: "", 
+                image: "img/Cosmic_space_card_cover_20261007002717.jpg" 
+            }
+        ];
+
+        function renderCards(items) {
+            const grid = document.getElementById('cardsGrid');
+            const noResults = document.getElementById('noResults');
+            grid.innerHTML = '';
+
+            if (items.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            items.forEach(bundle => {
+                const card = document.createElement('div');
+                card.className = "glass-card rounded-2xl p-4 hover:border-brand-neon/50 transition-all duration-300 flex flex-col justify-between glow-card relative overflow-hidden group";
+                
+                card.innerHTML = `
+                    <div class="relative w-full h-44 rounded-xl overflow-hidden mb-3">
+                        <img src="${bundle.image}" alt="${bundle.title}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                        
+                        <div class="absolute top-2.5 right-2.5 flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-rose-500/80 backdrop-blur-sm border border-rose-400/40 text-white text-[10px] font-black tracking-wide">
+                            <i class="fa-solid fa-fire text-amber-300"></i> FREE
+                        </div>
+                    </div>
+
+                    <div class="flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-brand-neon transition-colors leading-snug">${bundle.title}</h3>
+                            
+                            <!-- Fake Original Price Crossed Out -->
+                            <div class="mt-2 flex items-center gap-2 text-xs font-bn">
+                                <span class="text-slate-400">মূল্য:</span>
+                                <span class="line-through text-slate-500 font-semibold">${bundle.originalPrice}</span>
+                                <span class="text-emerald-400 font-black text-sm">৳০ (ফ্রি)</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
+                            <span class="text-[10px] text-amber-300 bg-amber-500/10 px-2 py-1 rounded border border-amber-500/20 font-bn font-bold">
+                                লিমিটেড অফার!
+                            </span>
+                            <button onclick="openModal(${bundle.id})" class="px-4 py-2 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-md shadow-brand-500/20">
+                                <span>ডাউনলোড</span>
+                                <i class="fa-solid fa-download text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterBundles() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const filtered = bundlesData.filter(b => b.title.toLowerCase().includes(query));
+            renderCards(filtered);
+            document.getElementById('bundleCount').innerText = `${filtered.length}টি বান্ডেল`;
+        }
+
+        function openModal(id) {
+            const bundle = bundlesData.find(b => b.id === id);
+            if (!bundle) return;
+
+            document.getElementById('modalTitle').innerText = bundle.title;
+            document.getElementById('modalImage').src = bundle.image;
+            document.getElementById('modalImage').alt = bundle.title;
+            
+            // Render crossed-out prices inside modal
+            document.getElementById('modalPriceTag').innerHTML = `
+                <span class="text-slate-400">মূল্য:</span>
+                <span class="line-through text-slate-500 font-semibold">${bundle.originalPrice}</span>
+                <span class="text-emerald-400 font-extrabold text-sm">৳০ (আজকে সম্পূর্ণ ফ্রি)</span>
+            `;
+
+            // Assign individual file locker link or empty fallback anchor
+            const lockerBtn = document.getElementById('fileLockerBtn');
+            lockerBtn.href = bundle.fileLockerUrl && bundle.fileLockerUrl.trim() !== "" ? bundle.fileLockerUrl : "#";
+
+            const modal = document.getElementById('downloadModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('downloadModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Initial Load Event Listener
+        window.onload = function() {
+            renderCards(bundlesData);
+        };
+    </script>
+</body>
+</html>
