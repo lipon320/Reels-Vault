@@ -410,167 +410,118 @@
     <script>
         // 23 Video Category Bundles with custom image thumbnails, prices, and individual empty file locker URL slots
         const bundlesData = [
-            { 
-                id: 1, 
-                title: "2D Animation Video", 
-                originalPrice: "৳২৫০", 
-                fileLockerUrl: "https://www.mobtrk.link/unlock/MdCzqZ", 
-                image: "img/Digital_card_graphic_for_2D_20261007002642.jpg" 
-            },
-            { 
-                id: 2, 
-                title: "Aesthetic Reels Bundle", 
-                originalPrice: "৳২০০", 
-                fileLockerUrl: "https://www.appstorevault.mobi/unlock/xhv9nX", 
-                image: "img/Card_cover_for_Aesthetic_Reels_20261007003108.jpg" 
-            },
-            { 
-                id: 3, 
-                title: "Art and Craft 1", 
-                originalPrice: "৳১৫০", 
-                fileLockerUrl: "https://www.cdndn.com/unlock/AfQwpG", 
-                image: "img/Art_and_craft_card_cover_20261007002624.jpg" 
-            },
-            { 
-                id: 4, 
-                title: "Art and Craft 2", 
-                originalPrice: "৳১৫০", 
-                fileLockerUrl: "https://www.lnksforyou.com/unlock/aBvGhW", 
-                image: "img/Craft_supplies_and_pottery_shaping_20261007002600.jpg" 
-            },
-            { 
-                id: 5, 
-                title: "Art and Craft", 
-                originalPrice: "৳২০০", 
-                fileLockerUrl: "https://www.cdnflyer.com/unlock/Pr84Jb", 
-                image: "img/Art_and_craft_desk_cover_20261007003033.jpg" 
-            },
-            { 
-                id: 6, 
-                title: "Bangla Funny Video", 
-                originalPrice: "৳৩০০", 
-                fileLockerUrl: "https://www.mobtrk.link/unlock/f1CnkH", 
-                image: "img/Bangla_funny_video_card_cover_20261007002652.jpg" 
-            },
-            { 
-                id: 7, 
-                title: "Bangla Natok Clip", 
-                originalPrice: "৳২৫০", 
-                fileLockerUrl: "https://www.cdnflyer.com/unlock/9mZtb5", 
-                image: "img/Bangla_Natok_Clip_card_cover_20261007002749.jpg" 
-            },
-            { 
-                id: 8, 
-                title: "Cat Reels Bundle", 
-                originalPrice: "৳১৫০", 
-                fileLockerUrl: "https://www.fastrsrvr.com/unlock/AASRoD", 
-                image: "img/Kittens_playing_with_yarn_20261007002427.jpg" 
-            },
-            { 
-                id: 9, 
-                title: "Cricket Reels Bundle", 
-                originalPrice: "৳৩০০", 
-                fileLockerUrl: "https://www.akamaicdn.org/unlock/S7qMim", 
-                image: "img/Cricket_ball_hitting_wickets_20261007002739.jpg" 
-            },
-            { 
-                id: 10, 
-                title: "Emotional Bangla", 
-                originalPrice: "৳২০০", 
-                fileLockerUrl: "https://www.cdndn.com/unlock/cj1uMh", 
-                image: "img/Monsoon_rain_on_glass_window_20261007002618.jpg" 
-            },
-            { 
-                id: 11, 
-                title: "Emotional English", 
-                originalPrice: "৳২০০", 
-                fileLockerUrl: "https://www.fastsvr.com/unlock/CZS7Oe", 
-                image: "img/Figure_walking_along_coastal_cliff_20261007002547.jpg" 
-            },
-            { 
-                id: 12, 
-                title: "English AI Reels", 
-                originalPrice: "৳৩০০", 
-                fileLockerUrl: "https://www.akamaicdn.org/unlock/I1TSOI", 
-                image: "img/English_AI_Reels_card_cover_20261007002658.jpg" 
-            },
-            { 
-                id: 13, 
-                title: "English Movie Clip", 
-                originalPrice: "৳২৫০", 
-                fileLockerUrl: "https://www.qckclk.com/unlock/HkMlly", 
-                image: "img/Film_clapperboard_on_theater_stage_20261007002506.jpg" 
-            },
-            { 
-                id: 14, 
-                title: "Football Reels 2", 
-                originalPrice: "৳২৫০", 
-                fileLockerUrl: "https://www.lnksforyou.com/unlock/F1Ikc5", 
-                image: "img/Football_striker_kicking_ball_20261007002810.jpg" 
-            },
-            { 
-                id: 15, 
-                title: "Football Reels", 
-                originalPrice: "৳২৫০", 
-                fileLockerUrl: "https://www.mobtrk.link/unlock/9Rl5md", 
-                image: "img/Soccer_ball_hitting_stadium_net_20261007002820.jpg" 
-            },
-            { 
-                id: 16, 
-                title: "Funny Video", 
-                originalPrice: "৳২০০", 
-                fileLockerUrl: "https://www.directcpi.com/unlock/hkzYia", 
-                image: "img/Funny_video_card_cover_design_20261007002540.jpg" 
-            },
-            { 
-                id: 17, 
-                title: "Hashtags", 
-                originalPrice: "৳১৫০", 
-                fileLockerUrl: "https://www.cdnflyer.com/unlock/TAa1IC", 
-                image: "img/Hashtags_branding_card_cover_20261007002442.jpg" 
-            },
-            { 
-                id: 18, 
-                title: "Islamic Bundle 2", 
-                originalPrice: "৳৩০০", 
-                fileLockerUrl: "https://www.fastrsrvr.com/unlock/m9rAhy", 
-                image: "img/Islamic_Bundle_card_cover_design_20261007002450.jpg" 
-            },
-            { 
-                id: 19, 
-                title: "Islamic Bundle", 
-                originalPrice: "৳৩০০", 
-                fileLockerUrl: "https://www.mobtrk.link/unlock/OtYInQ", 
-                image: "img/Mosque_minarets_at_sunset_20261007002800.jpg" 
-            },
-            { 
-                id: 20, 
-                title: "Islamic Reels Bundle", 
-                originalPrice: "৳৩০০", 
-                fileLockerUrl: "https://www.akamaicdn.org/unlock/FKr8DL", 
-                image: "img/Quran_and_prayer_beads_on_20261007002608.jpg" 
-            },
-            { 
-                id: 21, 
-                title: "Motivational Reels (English)", 
-                originalPrice: "৳২৫০", 
-                fileLockerUrl: "https://www.cdndn.com/unlock/edBtWB", 
-                image: "img/Athlete_standing_on_mountain_summit_20261007002710.jpg" 
-            },
-            { 
-                id: 22, 
-                title: "Romantic", 
-                originalPrice: "৳২০০", 
-                fileLockerUrl: "https://www.mobilerewards.link/unlock/7BIYmh", 
-                image: "img/Couple_holding_hands_under_lights_20261007002755.jpg" 
-            },
-            { 
-                id: 23, 
-                title: "Space Content", 
-                originalPrice: "৳২৫০", 
-                fileLockerUrl: "https://www.lnksforyou.com/unlock/2FZdm3", 
-                image: "img/Cosmic_space_card_cover_20261007002717.jpg" 
-            }
+    { 
+        id: 1, 
+        title: "2D Animation Video", 
+        originalPrice: "৳২৫০", 
+        fileLockerUrl: "https://www.fastrsrvr.com/unlock/f1CnkH", 
+        image: "img/2d_animation_video.jpg" 
+    },
+    { 
+        id: 2, 
+        title: "Aesthetic Reels", 
+        originalPrice: "৳২০০", 
+        fileLockerUrl: "https://www.mobtrk.link/unlock/edBtWB", 
+        image: "img/Aesthetic_Reels.jpg" 
+    },
+    { 
+        id: 3, 
+        title: "Art and Craft", 
+        originalPrice: "৳১৫০", 
+        fileLockerUrl: "https://www.fastsvr.com/unlock/bL0EKm", 
+        image: "img/Art_and_craft.jpg" 
+    },
+    { 
+        id: 4, 
+        title: "Bangla Natok Clip", 
+        originalPrice: "৳৩০০", 
+        fileLockerUrl: "https://www.appstorevault.mobi/unlock/G5WD5R", 
+        image: "img/Bangla_Natok_Clip.jpg" 
+    },
+    { 
+        id: 5, 
+        title: "Cat Reels Bundle", 
+        originalPrice: "৳২০০", 
+        fileLockerUrl: "https://www.akamaicdn.org/unlock/7SAYJq", 
+        image: "img/Cat_reels_bundle.jpg" 
+    },
+    { 
+        id: 6, 
+        title: "Emotional Bangla", 
+        originalPrice: "৳১৫০", 
+        fileLockerUrl: "https://www.fastsvr.com/unlock/j9HymL", 
+        image: "img/Emotional_bangla.jpg" 
+    },
+    { 
+        id: 7, 
+        title: "Emotional English", 
+        originalPrice: "৳২৫০", 
+        fileLockerUrl: "https://www.mobtrk.link/unlock/XKKnAw", 
+        image: "img/Emotional_English.jpg" 
+    },
+    { 
+        id: 8, 
+        title: "English Movie Clip", 
+        originalPrice: "৳৩০০", 
+        fileLockerUrl: "https://www.mobilerewards.link/unlock/eYDq8N", 
+        image: "img/English_movie_clip.jpg" 
+    },
+    { 
+        id: 9, 
+        title: "Football Reels", 
+        originalPrice: "৳২০০", 
+        fileLockerUrl: "https://www.mobtrk.link/unlock/i8H9sx", 
+        image: "img/Football_reels.jpg" 
+    },
+    { 
+        id: 10, 
+        title: "Funny Video", 
+        originalPrice: "৳১৫০", 
+        fileLockerUrl: "https://www.akamaicdn.org/unlock/K4GGm7", 
+        image: "img/Funny_video.jpg" 
+    },
+    { 
+        id: 11, 
+        title: "Hashtags", 
+        originalPrice: "৳২৫০", 
+        fileLockerUrl: "https://www.mobilerewards.link/unlock/8BQyPh", 
+        image: "img/Hashtags.jpg" 
+    },
+    { 
+        id: 12, 
+        title: "Islamic Bundle", 
+        originalPrice: "৳৩০০", 
+        fileLockerUrl: "https://www.cdndn.com/unlock/dWf5rp", 
+        image: "img/Islamic_bundle.jpg" 
+    },
+    { 
+        id: 13, 
+        title: "Islamic Bundle 2", 
+        originalPrice: "৳২০০", 
+        fileLockerUrl: "https://www.cdnflair.com/unlock/Z0DLq4", 
+        image: "img/Islamic_Bundle_2.jpg" 
+    },
+    { 
+        id: 14, 
+        title: "Motivational Reels (English)", 
+        originalPrice: "৳২৫০", 
+        fileLockerUrl: "https://www.cdnflyer.com/unlock/bGREcO", 
+        image: "img/Motivational_reels_english.jpg" 
+    },
+    { 
+        id: 15, 
+        title: "Romantic Video", 
+        originalPrice: "৳১৫০", 
+        fileLockerUrl: "https://www.mobtrk.link/unlock/z2SJXy", 
+        image: "img/Romantic.jpg" 
+    },
+    { 
+        id: 16, 
+        title: "Space Content", 
+        originalPrice: "৳৩০০", 
+        fileLockerUrl: "https://www.mobtrk.link/unlock/y4IStk", 
+        image: "img/Space_content.jpg" 
+    }
         ];
 
         function renderCards(items) {
